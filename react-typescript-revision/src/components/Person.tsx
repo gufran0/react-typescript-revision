@@ -1,13 +1,8 @@
-type PersonProps = {
-    name: {
-        first: string,
-        last: string
-    }
-}
+import { PersonProps } from "./Person.types"
 
-const Person = ({ name }: PersonProps) => {
+const Person = ({ names }: PersonProps) => {
     return (
-        <div>Person {name.first} {name.last}</div>
+        <div>Person {names.first} {names.last}</div>
     )
 }
 

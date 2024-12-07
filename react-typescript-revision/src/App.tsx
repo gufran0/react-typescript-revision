@@ -1,4 +1,5 @@
 import Button from "./components/Button";
+import Container from "./components/Container";
 import Greet from "./components/Greet";
 import Heading from "./components/Heading";
 import Input from "./components/Input";
@@ -31,7 +32,7 @@ function App() {
   return (
     <>
       <Greet name="hehe" messageCount={100} isLogged={true}></Greet>
-      <Person name={personName}></Person>
+      <Person names={personName}></Person>
       <PersonList names={nameList}></PersonList>
       <Status status="error"></Status>
       <Heading>placeholder text</Heading>
@@ -47,6 +48,7 @@ function App() {
         value="hello"
         handleChange={(event) => console.log(event)}
       ></Input>
+      <Container styles={{ border: "1px solid black", padding: "1rem" }}></Container>
     </>
   );
 }

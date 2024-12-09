@@ -1,5 +1,9 @@
 import Button from "./components/Button";
 import Container from "./components/Container";
+import Box from "./components/context/Box";
+import { ThemeContextProvider } from "./components/context/ThemeContext";
+import User from "./components/context/User";
+import { UserContextProvider } from "./components/context/UserContext";
 import Greet from "./components/Greet";
 import Heading from "./components/Heading";
 import Input from "./components/Input";
@@ -31,6 +35,12 @@ function App() {
 
   return (
     <>
+      <ThemeContextProvider>
+        <Box></Box>
+      </ThemeContextProvider>
+      <UserContextProvider>
+        <User></User>
+      </UserContextProvider>
       <Greet name="hehe" messageCount={100} isLogged={true}></Greet>
       <Person names={personName}></Person>
       <PersonList names={nameList}></PersonList>
@@ -44,11 +54,10 @@ function App() {
           console.log("button clicked", event);
         }}
       ></Button>
-      <Input
-        value="hello"
-        handleChange={(event) => console.log(event)}
-      ></Input>
-      <Container styles={{ border: "1px solid black", padding: "1rem" }}></Container>
+      <Input value="hello" handleChange={(event) => console.log(event)}></Input>
+      <Container
+        styles={{ border: "1px solid black", padding: "1rem" }}
+      ></Container>
     </>
   );
 }
